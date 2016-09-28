@@ -1,42 +1,72 @@
 <!Doctype html>
-<html>
-<title>
-    ECMC CODE CHALLENGE
-</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-<script src="../static/js/ecmc.js"></script>
-<body>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <title>ECMC CODE CHALLENGE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-<div class="container">
-    <div class="col-lg-6" style="padding-top:50px">
-        <h3>Check For Consecutive Numbers</h3>
-        <form role="form">
-            <div class="form-group">
-                <label for="input">Enter the integer one by one :</label>
-                <input id="numberInput" class="form-control" type="number"></input>
+    <!-- CSS Files -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body onload="init()">
+
+    <div id="header">
+        <h1>Check For Consecutive Numbers</h1>
+    </div>
+
+    <div id="content">
+        <!-- form to take input from user -->
+        <div id="mainContent">
+            <form role="form">
+                <div class="form-group" id="userInput">
+                    <label for="input">Enter the integer one by one :</label>
+                    <input id="numberInput" class="form-control" type="number"/>
+                </div>
+            </form>
+        </div>
+
+        <!-- Buttons -->
+        <div id="buttons">
+            <button id="addBtn" type="button" onclick="addInteger()" >Add number</button>
+            <button id="searchBtn" onclick="searchConsecutiveNumbers()" >Search Indices</button>
+            <button id="resetBtn" onclick="reset()" >Reset</button>
+        </div>
+
+        <div id="output">
+            <!-- Numbers added by user -->
+            <div id="integerArray">
+                <p>Entered Numbers :  [Array]</p>
             </div>
-        </form>
-        <div>
-            <button type="button" onclick="addInteger()"value="Click" >click me</button>
-            <button onclick="reset()" >Reset</button>
-        </div>
 
-        <div id="integerArray" style="width:200px; height:50px; ">
-            <p>Entered Numbers</p>
-        </div>
-
-        <div style="padding-top:30px; padding-bottom:10px">
-            <button onclick="searchConsecutiveNumbers()" >Search Indices</button>
-        </div>
-
-        <div id="indicesArray" >
-            <p>List Of Indices</p>
+            <!-- List of indices returned -->
+            <div id="indicesArray">
+                <p>List Of Indices :  [Array]</p>
+            </div>
         </div>
     </div>
-</div>
 
+    <!-- Footer -->
+    <div id="footer">
+        <div id="wrap">
+            <p>&copy; ECMC coding challenge</p>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js.js"></script>
 </body>
-
 </html>
